@@ -448,5 +448,264 @@
 				<input type="submit" name="Send">
 			</form>
 		</div>
+		<div class="formats">
+			<!-- 
+				controls - Добавить элемент управления воспроизведения
+				autoplay - Начать воспроизведение после загрузки страницы
+			 -->
+			 <audio src="audio/Vivaldi.mp3" autoplay>
+				<a href="http://htmlbook.ru/html/audio">Браузер не поддерживает воспроизведение звуковых медиафайлов</a>
+			</audio>
+			Популярные мультимедиа контейнеры:
+			<ul>
+				<li><strong>AAC</strong>&mdash; формат сжатия с потерями, даёт более высокое качество чем MP3</li>
+				<li><strong>MP3</strong>&mdash; лицензируемый формат файла для хранения аудиоинформации</li>
+				<li><strong>OGG</strong>&mdash; открытый стандарт мультимедиа контейнера </li>
+				<li><strong>WAV</strong>&mdash; проприетарный аудиоформат без какого-либо сжатия;</li>
+				<li><strong>WEBM</strong>&mdash; открытый бесплатный медиаформат Google, основанный на аудиокодеке Vorbis</li>
+			</ul>
+		</div>
+		<div class="audio1">
+			<!-- autplay - сообщает браузеру о том, что необходимо начать вопсроизведение аудио, как только будет загружена страница
+				loop - повторно запустить аудио после завершения
+				canplaytype(mun) - возврашает строку, указывающую, может ли браузер воспроизводить данный тип медиафайла
+				currentTime - определяет текующую позицию воспроизведения в секундах
+				duration - содержит длину айдиофайла в секундах
+				play() - функция, начинает воспроизведение с текущей позиции
+				pause() - функция, приостанавливает воспроизведение аудио
+			-->
+
+			<audio id="audio" controls autoplay src="media/audio/Vivaldi.ogg">
+				Браузер не поддерживает воспроизведение звуковых медиафайлов
+			</audio>
+
+			<script>
+				if (!Modernizr.audio) {
+					alert("Браузер не поддерживает воспроизведение звуковых медиафайлов");
+				}
+				else {
+					var audio = document.getElementById("audio");
+					var res = audio.canPlayType('media/audio/ogg; codecs="vorbis"');
+					if (res) alert(res + "can play ogg vorbis")
+					else alert("no support for ogg vorbis");
+				}
+			</script>
+		</div>
+		<script type="text/javascript" src="JS/Moderniz-2.0.6.js"></script>
+		<div class="audio2">
+			<audio controls>
+				<!-- Указание файлов, которые будут использоваться для воспроизведения браузером.
+					 Браузер начнёт воспроизводить первый файл, формат которого поддерживает. 
+				-->
+				<source src="media/audio/Vivaldi.mp3">
+				<source src="media/audio/Vivaldi.ogg">
+				<a href="http://html5accessibility.com/">Браузер не поддерживает воспроизведение звуковыз медиафайлов</a>
+			</audio>
+		</div>
+		<div class="audio3">
+			<input id="playButton" type="button" value="play" />
+			
+			<audio id="audioElement">
+				<source src="media/audio/Vivaldi.mp3">
+				<source src="media/audio/Vivaldi.ogg">
+			</audio>
+
+			<script>
+				document.getElementById("playButton").onclick = playSound;
+
+				function playSound() {
+
+					var music = document.getElementById("audioElement")
+					var button = document.getElementById("playButton")
+					
+					// если аудиоплеер на паузе
+					if (music.paused) {
+						music.play(); // начать воспроизведение
+						button.value = "stop";			
+					}
+					else { //иначе
+						music.pause(); //остановить воспроизведение
+						button.value = "play";
+					}
+				}
+			</script>
+		</div>
+		<div class="audio4">
+			<audio>
+				<source src="media/audio/Vivaldi.mp3">
+				<source src="media/audio/Vivaldi.ogg">
+			</audio>
+
+			<button title="Воспроизвести с 30 секунды" onclick="playAt(30);">30 секунда</button>
+
+			<script>
+				function playAt(seconds) {
+					var audio = document.getElementsByTagName("audio")[0];
+					audio.currentTime = seconds;
+					audio.play();
+				}
+			</script>
+
+			<button title="остановить воспроизведение" onclick="stopAudio();">
+				STOP</button>
+			<script>
+
+				function stopAudio() {
+					var audio = document.getElementsByTagName("audio")[0];
+					audio.currentTime = 0;
+					audio.pause();
+				}
+			</script>
+		</div>
+		<div class="video1">
+			<video controls loop poster="poster.png">
+				<source src="video/vsvideo.mp4" />
+				<source src="video/vsvideo.ogg" />
+				<source src="video/vsvideo.webm" />
+			</video>
+
+			<ul>
+				<li><strong>MP4</strong>&mdash; мультимедиа-контейнер для проприетарного кодека H.264.</li>
+				<li><strong>OGV</strong>&mdash; свободный мультимедиа-контейнер с открытым исходным кодом для кодека Theora. Результаты сжатия имеют более низкое качество, чем H.264.</li>
+				<li><strong>WEBM</strong>&mdash; ещё один мультимедиа-контейнер с открытым исходными кодом, использующий новый бесплатный кодек VP8 от Google.</li>
+			</ul>
+		</div>
+		<div class="video2">
+			<video id="video" style="border: 2px solid gray; cursor: cross;">
+				<source src="media/video/vsvideo.mp4" />
+				<source src="media/video/vsvideo.ogg" />
+				<source src="mediavideo/vsvideo.webm" />
+			</video>
+
+			<script>
+				window.onload = function () {
+					var videoElem = document.getElementById("video");
+
+					// устанавливаем размер элемента на странице как половина высоты и ширины видеозаписи
+					videoElem.width = videoElem.videoWidth / 2;
+					videoElem.height = videoElem.videoHeight / 2;
+
+					// запускаем видео при наведении курсора
+					videoElem.onmouseover = function () {
+						this.play();
+					}
+
+					// останавливаем видео при выходе курсора
+					videoElem.onmouseout = function () {
+						this.pause();
+					}
+				}
+			</script>
+		</div>
+		<div class="video3">
+			<button title="Создать превью" onclick="generatePreview();">Создать превью</button>
+			
+			<br />
+
+			<video id="origVideo" width="640" height="360" style="border: 1px solid grey">
+				<source src="media/video/vsvideo.mp4" />
+				<source src="media/video/vsvideo.ogg" />
+				<source src="media/video/vsvideo.webm" />
+			</video>
+			
+			<br />
+
+			<canvas id="previewMed" style="border: 1px solid grey"></canvas>
+			<canvas id="previewSm" style="border: 1px solid grey"></canvas>	
+
+			<script>
+				function generatePreview() {
+					var video = document.getElementById('origVideo')
+
+					// получение контекста для работы с перым canvas
+					var canvas1 = document.getElementById('previewMed')
+					var context1 = canvas1.getContext('2d')
+
+					// получение контекста для рабоыт со вторым canvas
+					var canvas2 = document.getElementById('previewSm')
+					var context2 = canvas2.getContext('2d')
+
+					// задаём размеры для обеих canvas 
+					canvas1.width = 320;
+					canvas1.height = 180;
+					canvas2.width = 160;
+					canvas2.height = 90;
+
+					// добавляем обработчик на событие начала воспроизведения видео
+					video.addEventListener('play', function() {
+						drawVideo(this, context1, context2);
+					}, false);
+
+					// запускаем видео
+					video.play();
+				}
+				
+				function drawVideo (video, canvas1, canvas2) {
+
+					// если видео на паузе или завершено - не выполняем данную функцию
+					if (video.paused || video.ended) {
+						return false;
+					}
+
+					// рисуем на первом canvas видео размером 320 на 180
+					canvas1.drawImage(video, 0, 0, 320, 180);
+
+					// рисуем на втором canvas видео размером 160 на 90
+					canvas2.drawImage(video, 0, 0, 160, 90);
+
+					// планируем запуск функции drawVideo через 25 миллисекунд передавая текущие значения параметров функции
+					setTimeout(drawVideo, 10, video, canvas1, canvas2);
+				}
+			</script>
+		</div>
+		<div class="video4">
+			<video id="video10" style="border: 2px solid gray;" height="200" width="200">
+				<source src="media/video/vsvideo.mp4">
+				<source src="media/video/vsvideo.ogg">
+				<source src="media/video/vsvideo.webm">
+			</video>
+
+			<br />
+
+			<button id="part1Button">
+				1
+			</button>
+			<button id="part2Button">
+				2
+			</button>
+			<button id="part3Button">
+				3
+			</button>
+
+			<button id="playButton">play</button>
+			<button id="pauseButton">pause</button>
+
+			<script>
+				window.onload = function () {
+					var v = document.getElementById("video10");
+					var part = v.duration / 3;
+
+					document.getElementById("part1Button").onclick = function () {
+						v.currentTime = 0;
+					};
+
+					document.getElementById("part2Button").onclick = function () {
+						v.currentTime = part;
+					};
+
+					document.getElementById("part3Button").onclick = function () {
+						v.currentTime = part * 2;
+					};
+
+					document.getElementById("playButton").onclick = function () {
+						v.play();
+					};
+
+					document.getElementById("pauseButton").onclick = function () {
+						v.pause();
+					};
+				}
+			</script>
+		</div>
 	</body>
 </html>
