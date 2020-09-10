@@ -298,7 +298,7 @@ game.platform = {
 	}
 };
 
-	// start: function() {
+	// start: function() {}
 	// 	this.ctx = document.getElementById("mycanvas").getContext("2d");
 	// 	let background = new Image();
 	// 	background.src = "media/image/background.png";
