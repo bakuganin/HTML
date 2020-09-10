@@ -29,7 +29,7 @@ let game = {
 		window.addEventListener("keydown", e => {
 			if (e.keyCode === KEYS.SPACE) {
 				this.platform.fire();
-			} else if (e.keyCode === KEYS.LEFT || e.keyCode == KEYS.RIGHT) {
+			} else if (e.keyCode === KEYS.LEFT || e.keyCode === KEYS.RIGHT) {
 				this.platform.start(e.keyCode);
 			}
 		});
@@ -83,7 +83,7 @@ let game = {
 	},
 	collideBlocks() {
 		for (let block of this.blocks) {
-			if (this.ball.collide(block)) {
+			if (block.active && this.ball.collide(block)) {
 				this.ball.bumpBlock(block);
 				this.addScore();
 			}
