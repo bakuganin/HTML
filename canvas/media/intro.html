@@ -1,20 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ARKANOID V-0.0.1</title>
-	<style>
-		body {
-			padding: 0;
-			margin: 0;
-		}
-	canvas {
-		width: 100%;
-	}
-	</style>
+	<title>intro</title>
 </head>
 <body>
-	<canvas id="mycanvas" width="640" height="360"></canvas>
-	<!-- <script>
+  <canvas width="800" height="400"></canvas>
+  <script>
     // Main Game Class
     class Game {
       constructor() {
@@ -221,9 +212,23 @@
       update(dt) {
         // nothing to do here
       }
+      render(dt, ctx, canvas) {
+        // clear the canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // display "game over" text
+        const gameOverText = 'Game Over';
+        ctx.textBaseline = 'top';
+        ctx.font = '100px Helvetica';
+        ctx.fillStyle = '#ee4024';
+        ctx.fillText(gameOverText, (canvas.width - ctx.measureText(gameOverText).width) / 2, canvas.height / 2 - 50);
+      }
     }
+
+    // launch game
     let game = new Game();
-  </script> -->
-	<script type="text/javascript" src="JS/game.js"></script>
+  </script>
+
+
 </body>
 </html>
