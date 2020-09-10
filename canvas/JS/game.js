@@ -13,6 +13,19 @@ let game = {
 	},
 	init: function() {
 		this.ctx = document.getElementById("mycanvas").getContext("2d");
+		this.setEvents();
+	},
+	setEvents() {
+		window.addEventListener("keydown", e => {
+			if (e.keyCode === 37) {
+				this.platform.dx = -this.platform.velocity;
+			} else if (e.keyCode === 39) {
+				this.platform.dx = this.platform.velocity;
+			}
+		}),
+		window.addEventListener("keyup", e => {
+			this.platform.dx = 0;
+		});
 	},
 	preload(callback) {
 		let loaded = 0;
@@ -40,9 +53,14 @@ let game = {
 			}
 		}
 	},
+	update() {
+		this.platform.move();
+	},
 	run() {
 		window.requestAnimationFrame(() => {
+			this.update();
 			this.render();
+			this.run();
 		});
 	},
 	render() {
@@ -50,10 +68,17 @@ let game = {
 		this.ctx.drawImage(this.sprites.ball, 0, 0, this.ball.width, this.ball.height,
 			this.ball.x, this.ball.y, this.ball.width, this.ball.height);
 		this.ctx.drawImage(this.sprites.platform, this.platform.x, this.platform.y);
+		this.renderBlocks();
+	},
+	renderBlocks() {
+		for (let block of this.blocks) {
+			this.ctx.drawImage(this.sprites.block, block.x, block.y);
+		}
 	},
 	start: function() {
 		this.init();
 		this.preload(() => {
+			this.create();
 			this.run();
 		});
 	}
@@ -68,7 +93,12 @@ game.ball = {
 
 game.platform = {
 	x: 280,
-	y: 300
+	y: 300,
+	move() {
+		if (this.dx) {
+			this.x += this.dx;
+		}
+	}
 };
 
 	// start: function() {
