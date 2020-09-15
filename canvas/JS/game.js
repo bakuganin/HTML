@@ -12,9 +12,9 @@ let game = {
 	blocks: [],
 	score: 0,
 	rows: 6,
-	cols: 1,
+	cols: 10,
 	width: 1280,
-	height: 720,
+	height: 740,
 	sprites: {
 		background: null,
 		ball: null,
@@ -148,7 +148,7 @@ let game = {
 			this.ball.x, this.ball.y, this.ball.width, this.ball.height);
 		this.ctx.drawImage(this.sprites.platform, this.platform.x, this.platform.y);
 		this.renderBlocks();
-		this.ctx.fillText("Score: " + this.score, 15, 20);
+		this.ctx.fillText("Score: " + this.score, 65, 43);
 	},
 	renderBlocks() {
 		for (let block of this.blocks) {
