@@ -1,54 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>13.2 Task</title>
 	<title>13.4 Task</title>
 	<style type="text/css">
-		#id1, #id2, #id3 {
-			margin: 50px;
-			padding: 10px;
-			border: 1px solid;
-			width: 400px;
-			height: 130px;
+		#id1, #id2, #id3, #id4 {
+			float: left;
+			border: 2px #000000 solid;
+			padding: 30px;
+			width: 300px;
+			height: 100px;
+			margin: 20px;
+			background-color: #41dade;
+			color: #FFF;
+			font-weight: bold;
 		}
-
 		#id1 {
-			/*
-				box-shadow - добавляет тень к элементу
-				сдвиг по X | сдвиг по Y | цвет
-			*/
-			-webkit-box-shadow: 4px 4px black;
-			box-shadow: 4px 4px black;
+			/* border-radius с двумя значениями через слэш позволяет создать эллиптрические углы*/
+			border-radius: 100px/200px;
 		}
-
 		#id2 {
-			/*
-				сдвиг по X | сдвиг по Y | радиус размытия | растяжение | цвет
-			*/
-			-webkit-box-shadow: 0px 0px 16px 1px black;
-			box-shadow: 0px 0px 16px 1px black;
+			/* первое значение скругленные верхнего левого угла и нижнего правого, второе значение - верхний правый и нижний левый угол*/
+			border-radius: 10px 20px;
 		}
-
 		#id3 {
-			/*
-				сдвиг по Х | сдвиг по Y | радиус размытия | растяжение | цвет
-				inset - тень выводиться внутри элемента
-			*/
-			-webkit-box-shadow: 0px 0px 6px 2px black inset;
-			box-shadow: 0px 0px 20px -5px black inset;
+			/* первое значение - верхний левый угол, второе значение правый верхний и нижний левый, третье значение - правый нижний угол*/
+			border-radius: 10px 20px 30px;
+		}
+		#id4 {
+			/* значение задаются по часовой стрелке начиная с левого верхнего угла*/
+			border-radius: 10px 20px 30px 40px;
 		}
 	</style>
 </head>
 <body>
-	<div id="id1">
-		<span style="text-decoration: underline;">box-shadow: 4px 4px black;</span>
-	</div>
-	<div id="id2">
-		2. Также данное свойство может иметь значения указывающие радиус разброса тени (третее значение) и размер тени (четвентое значение).
-		<span style="text-decoration: underline;">box-shadow: 0px 0px 16px 12px black;</span>
-	</div>
-	<div id="id3">
-		3. С помощью значения inset Вы можете указать, что тень должна быть не внешней, а внутренней. Элементы с внутренними тенями кажутся "вдавленными".
-		<span style="text-decoration: underline;">box-shadow: 0px 0px 6px 2px black inset;</span>
-	</div>
+	<p id='id1'>
+		<span>border-radius:5px</span>
+	</p>
+	<p id="id2">
+		<span>border-radius:10px</span>
+	</p>
+	<p id="id3">
+		<span>border-radius:20px</span>
+	</p>
+	<p id="id4">
+		<span>border-radius:80px</span>
+	</p>
 </body>
-</html>
+</html> 
