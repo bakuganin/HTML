@@ -1,48 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>12.1 task</title>
+	<title>12.2 task</title>
 	<style type="text/css">
-		body {
-			background-image: url("bg.jpg");
-			background-repeat: no-repeat;
-
-			-moz-background-size: 500px 370px;
-			-o-background-size: 500px 370px;
-			-webkit-background-size: 500px 370px;
-			background-size: 500px 370px;
-		}
-
-		div{
-			width: 200px;
-			height: 120px;
-			margin: 10px;
-			float: left;
+		div {
 			padding: 10px;
-			font-size: 1.5em;
-			background-color: black;
-			color: cyan;
-			z-index: 100;
+			margin: 10px;
+			font-weight: bold
+			color: white;
 		}
 
 		#id1 {
-			/* rgba(red, green, blue, alpha)
-				значение каналов red, green, blue - от 0 до 255
-				значение alpha-канала 0 - полностью прозрачный, 1 - полностью не прозрачный
-				При использовании rgba прозрачность задается только элементу, 
-				дочерние элементы остаются без изменений.
-			*/
-			background-color: rgba(100, 0, 200, 0.3);
+			background-color: hsl(0, 100%, 50%);
 		}
 
 		#id2 {
-			/* opacity - устанавливается прозрачность для элемента и всех дочерних элементов */
-			opacity: 0.4;
+			background-color: hsl(120, 100%, 50%);
+		}
+
+		#id3 {
+			background-color: hsl(241, 100%, 70%);
 		}
 	</style>
 </head>
 <body>
-	<div id="id1">Прозрачность задана при помощи RGBA</div>
-	<div id="id2">Прозрачность задана при помощи opacity</div>
+	<div id="id1">hsl(0, 20%, 50%)</div>
+	<div id="id2">hsl(120, 100%, 80%)</div>
+	<div id="id3">hsl(240, 100%, 50%)</div>
+
+	<p>HSL (Hue, Saturation, Lightness) - цветовая модель, в которой цветовыми координатоми является тон, насыщенность и яркость <a href="http://ru.wikipedia.org/wiki/HSL">HSL- Википедия</a></p>
+
+	<p>Для того, чтобы задать цвет этим способом Вы должны указать:</p>
+
+	<p>
+		<img alt="Цветовой круг" src="color-wheel-300.gif" style="height: 300px; width: 400px">
+	</p>
+
+	<ol>
+		<li><strong>оттенок цветa</strong> указывается в градусах поворота цветового круга (<em> 0 градусов - красный, 120 градусов - зеленый, 240 градусов - голубой и т.д</em>);</li>
+		<li><strong>насыщенность цвета</strong> указывается в процентах (<em>по мере процентов цвет будет блекнуть</em>);</li>
+		<li><strong>яркость цвета</strong>также указывается в процентах (<em>0% - темный, 100% - светлый</em>).</li>
+	</ol>
+
 </body>
 </html>
