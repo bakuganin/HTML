@@ -1,46 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>12.2 task</title>
+	<title>12.3 task</title>
 	<style type="text/css">
+		body {
+			background-image: url(bg.jpg);
+			background-repeat: no-repeat;
+
+			-moz-background-size: 500px 370px;
+			-o-background-size: 500px 370px;
+			-webkit-background-size: 500px 370px;
+			background-size: 500px 370px;
+		}
+
 		div {
-			padding: 10px;
+			width: 200px;
+			height: 120px;
 			margin: 10px;
-			font-weight: bold
-			color: white;
+			float: left;
+			padding: 10px;
+			font-size: 1.5em;
+			background-color: black;
+			color: orange;
+			z-index: 100;
 		}
 
 		#id1 {
-			background-color: hsl(0, 100%, 50%);
+			background-color: hsla(255, 20%, 40%, 0.3);
 		}
 
 		#id2 {
-			background-color: hsl(120, 100%, 50%);
+			opacity: 0.1;
 		}
 
-		#id3 {
-			background-color: hsl(241, 100%, 70%);
-		}
 	</style>
 </head>
 <body>
-	<div id="id1">hsl(0, 20%, 50%)</div>
-	<div id="id2">hsl(120, 100%, 80%)</div>
-	<div id="id3">hsl(240, 100%, 50%)</div>
-
-	<p>HSL (Hue, Saturation, Lightness) - цветовая модель, в которой цветовыми координатоми является тон, насыщенность и яркость <a href="http://ru.wikipedia.org/wiki/HSL">HSL- Википедия</a></p>
-
-	<p>Для того, чтобы задать цвет этим способом Вы должны указать:</p>
-
-	<p>
-		<img alt="Цветовой круг" src="color-wheel-300.gif" style="height: 300px; width: 400px">
-	</p>
-
-	<ol>
-		<li><strong>оттенок цветa</strong> указывается в градусах поворота цветового круга (<em> 0 градусов - красный, 120 градусов - зеленый, 240 градусов - голубой и т.д</em>);</li>
-		<li><strong>насыщенность цвета</strong> указывается в процентах (<em>по мере процентов цвет будет блекнуть</em>);</li>
-		<li><strong>яркость цвета</strong>также указывается в процентах (<em>0% - темный, 100% - светлый</em>).</li>
-	</ol>
-
+	<div id="id1">Прозрачность задана при помощи HSLA.</div>
+	<div id="id2">Прозрачность задана при помощи opacity.</div>
 </body>
 </html>
