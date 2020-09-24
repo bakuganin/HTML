@@ -1,45 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>11.1 task</title>
+	<title>11.3 task</title>
 	<style type="text/css">
-		div {
-			width: 600px;
-			height: 400px;
-			margin: 10;
-			border: 1px solid black;
-			background-repeat: no-repeat;
-		}
-
 		#id1 {
-			background-image: url("bg.jpg");
 
-			/*Размер фона установлен явно в пекселах*/
-			-moz-background-size: 600px 542px;
-			-o-background-size: 600px 542px;
-			-webkit-background-size: 600px 542px;
-			background-size: 600px 442px;
-		}
+			/*
+				background-image может использоваться для задния нескольких фонов для одного блока.
+				Фоны должны быть определены через запятую во всех СSS свойствах относящихся к настройкам фоновых изображений.
+				Фон определенный в списке первым будет отображаться поверх остальных.
+			*/
 
-		#id2 {
-			background-image: url("bg.jpg");
+			background-image: url("bg.jpg"), url(logo.png);
+			background-position: bottom right, center;
+			background-repeat: no-repeat, no-repeat;
+			
+			-moz-background-size: 100px 41px, 50% 50%;
+			-o-background-size: 100px 41px, 50% 50%;
+			-webkit-background-size: 100px 41px, 50% 50%;
+			background-size: 135px 100px, 100% 100%;
 
-			/*фон занимает половину высоты и ширины элемена*/
-			-moz-background-size: 100% 100%;
-			-o-background-size: 100% 100%;
-			-webkit-background-size: 100% 100%;
-			background-size: 100% 100%;
+			border: 1px #808080 solid;
+			height: 500px;
+			width: 500px;
 		}
 	</style>
 </head>
 <body>
-	<!-- background-size - cвойство для масштабирования фона
-
-	В CSS2.1 размер фонового изображения нельзя установить явно
-	B CSS3 background-size определяет размер фонового изображения.
-	Размер фоновых изображений может быть указан в пикселях или в процентах.
-	-->
 	<div id="id1"></div>
-	<div id="id2"></div>
 </body>
 </html>
