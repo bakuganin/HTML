@@ -5,31 +5,25 @@
 	<style type="text/css">
 		#id1 {
 			width: 450px;
+			height: 170px;
+			padding: 10px;
 			border: 1px #000 solid;
-
-			-ms-text-overflow: ellipsis;
-			-o-text-overflow: ellipsis;
-			text-overflow: ellipsis; /* текст обрезается и к концу строки добавляется многоточие. */
-			
-			overflow: hidden;
-			white-space: nowrap;
 		}
 
 		#id2 {
 			width: 450px;
+			height: 170px;
+			padding: 10px;
 			border: 1px #000 solid;
 
-			-ms-text-overflow: clip;
-			-o-text-overflow: clip;
-			text-overflow: clip; /* Текст обрезается по размеру области. */
-			
-			overflow: hidden;
-			white-space: nowrap;
+			/* Перенос строк добавляется автоматически, чтобы слово поместилось в заданную ширину блока. */
+			-ms-word-wrap: break-word;
+			word-wrap: break-word;
 		}
 	</style>
 </head>
 <body>
-	<p id="id1"><b>text-overflow: ellipsis</b> - Текст выходящий за пределы родительского элемента</p>
-	<p id="id2"><b>text-overflow: clip</b> - Текст выходящий за пределы додительского элемента</p>
+	<p id="id1">Данный текст вполне обычен, но он имеет <b>дезоксирибонуклеиновую кислоту</b>, которая входит за пределы его содержимого.</p>
+	<p id="id2">С помощью нового CSS3 свойства word-wrap: break-word мы можем разделить <b>дезоксирибонулкеиновую кислоту</b> и перенести ее на новую строку.</p>
 </body>
 </html>
