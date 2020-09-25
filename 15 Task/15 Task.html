@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>15.1 Task</title>
+	<title>15.2 Task</title>
 </head>
 	<style type="text/css">
 		h1 {
 			border-bottom: 1px solid black;
 		}
 
-		div {
-			/* Кол-во стобцов, на которое необходимо разбить текст выбранного элемента */
-			-moz-column-count: 6;
-			-webkit-column-count: 6;
-			column-count: 6;
+		.newspaper {
+			-webkit-columns: 350px auto;
+			-moz-columns: 350px auto;
+			-ms-columns: 350px auto;
+/*			column-count: 6;*/
+			columns: 350px auto; /* определение ширины колонки и кол-во столбцов */
 		}
 	</style>
 <body>
 	<h1>Lorem ipsum</h1>
-	<div>
+	<div class="newspaper">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in ex et elit viverra placerat eu non leo. In est nunc, fringilla a commodo mollis, iaculis eget dui. Integer blandit eleifend lacus vel sodales. Phasellus hendrerit ipsum porttitor, euismod velit eget, luctus justo. Cras dictum eros vitae consequat ultrices. Maecenas mattis mattis maximus. Nam gravida tempor tortor nec eleifend. Suspendisse in dignissim justo. Morbi congue quis mauris vitae maximus. Curabitur aliquet orci id nibh interdum ultricies. Praesent non mauris lectus. Proin eros lectus, finibus in auctor ac, mattis nec augue. Mauris egestas orci ac diam ultrices cursus.
 
 		In ullamcorper nunc quis vulputate finibus. Fusce at orci mi. Curabitur porttitor dolor vitae viverra imperdiet. Vivamus neque ex, euismod sed tristique varius, cursus eget enim. Maecenas cursus at magna vel convallis. Phasellus faucibus metus nulla, quis rutrum lacus sagittis sed. Duis iaculis dolor eget lacinia sollicitudin. Donec bibendum ligula id risus aliquam viverra. Nullam non ex efficitur, fringilla nisi porta, congue nunc. Ut ultrices imperdiet mauris id vehicula. Integer fringilla lacinia nisi. Aenean a nibh tempor justo pretium egestas. Sed id tellus mi.
