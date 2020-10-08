@@ -9,6 +9,13 @@ body {
 	color: #555;
 }
 
+hr{
+	border: none;
+	color: gray;
+	background-color: gray;
+	height: 1px;
+}
+
 p {
 	padding: 0 0 20px 0;
 	line-height: 1.7em;
@@ -110,7 +117,7 @@ ul.menu li {
 ul.menu li a {
 	font: normal 100% 'trebuchet ms', sans-serif;
 	display: block;
-	height: 20px;
+	height: 0px;
 	padding: 6px 35px 5px 28px;
 	color: #fff;
 	text-decoration: none;
@@ -223,8 +230,30 @@ hr {
 	margin-right: 3%;
 }
 
+.content .description_film {
+	/*position: absolute;
+	float: left;
+	right: 430px;
+	top: 310px;*/
+	padding: 0px 10px 10px 5px;
+	width: 580px;
+	font-size: 80%;
+	text-align: justify;
+	font: normal 80% 'century gothic', arial;
+
+}
+
+.content h3{
+	/*position: relative;
+	bottom: 323px;
+	right: -210px;*/
+	font: normal 120% 'century gothic', arial;
+	margin: 0 0 5px 0;
+	padding: 15px 0 5px 0;
+	color: #000;
+}
 .decription_film {
-	margin-bottom: 15%;
+	/*margin-bottom: 15%;*/
 }
 
 .description_film img{
